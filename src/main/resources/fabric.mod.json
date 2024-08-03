@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "introduction_mod",
+	"version": "${version}",
+	"name": "Introduction Mod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/introduction_mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.joelkkusi.introduction_mod.IntroductionMod"
+		],
+		"client": [
+			"dev.joelkkusi.introduction_mod.IntroductionModClient"
+		],
+		"fabric-datagen": [
+			"dev.joelkkusi.introduction_mod.IntroductionModDataGenerator"
+		]
+	},
+	"mixins": [
+		"introduction_mod.mixins.json",
+		{
+			"config": "introduction_mod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
